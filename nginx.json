@@ -1,0 +1,39 @@
+{
+  "variables": {
+    "aws_region": "{{user `aws_region`}}",
+    "instance_type": "{{user `instance_type`}}",
+    "ami_name": "{{user `ami_name`}}",
+    "source_ami": "{{user `source_ami`}}",
+    "vpc_id": "{{user `vpc_id`}}",
+    "subnet_id": "{{user `subnet_id`}}"
+  },
+
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "region": "{{user `aws_region`}}",
+      "instance_type": "{{user `instance_type`}}",
+      "ssh_username": "ubuntu",
+
+      "source_ami": "{{user `source_ami`}}",
+
+      "vpc_id": "{{user `vpc_id`}}",
+      "subnet_id": "{{user `subnet_id`}}",
+      "associate_public_ip_address": true,
+
+      "ami_name": "{{user `ami_name`}}-{{timestamp}}"
+    }
+  ],
+
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sudo apt-get update",
+        "sudo apt-get install -y nginx nmap",
+        "sudo systemctl enable nginx",
+        "sudo systemctl start nginx"
+      ]
+    }
+  ]
+}

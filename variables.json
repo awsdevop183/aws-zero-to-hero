@@ -1,0 +1,10 @@
+{
+  "aws_region": "us-east-1",
+  "instance_type": "t2.micro",
+  "ami_name": "ubuntu-nginx-nmap",
+  "source_ami": "ami-0abcdef1234567890",
+  "vpc_id": "vpc-xxxxxx",
+  "subnet_id": "subnet-xxxxxx"
+}
+
+
