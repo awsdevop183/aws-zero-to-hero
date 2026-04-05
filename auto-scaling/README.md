@@ -307,7 +307,6 @@ ENVEOF
 chmod 600 /etc/shopscale.env
 systemctl restart shopscale
 
-echo "ShopScale started on $INSTANCE_ID"
 ```
 
 > Replace `DB_HOST` and `DB_PASS` with your actual values before saving.
