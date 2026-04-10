@@ -4,6 +4,8 @@ E-commerce product catalog · Flask + MySQL RDS · Ubuntu 24.04 · Custom AMI + 
 
 ---
 
+# Full youtube walkthrough here: https://80-port-z5v7tw5rwij2g2vu.labs.kodekloud.com/
+
 ## Architecture
 
 ```
